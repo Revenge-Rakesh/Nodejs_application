@@ -1,0 +1,10 @@
+######## repository url and credentials where images are hosted ########
+#Used for Image pulling with given credentials
+#example 102315585312.dkr.ecr.us-east-2.amazonaws.com
+Registry_URL:
+
+# provide repository login credential
+registry_usernme:
+
+# provide repository login credential
+registry_pass:
