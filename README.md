@@ -5,8 +5,8 @@
 - nodejs-hpa.yml file used for auto scaling of nodejs application with minimum of 7 and maximum of 10
   replicasets.
 - all.yml file used to take the user inputs like docker user name / ECR registry username
-  user password. 
-- For security purpose, it is better to create different file without exposing out side
+  user password for pulling images. 
+- For security purpose, it is better to create different file without exposing the file to out side
 
 
 Basics Required:
