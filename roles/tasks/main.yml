@@ -1,5 +1,5 @@
 - name: "Creating secrete file for pulling images"
-  command: "kubectl create secret docker-registry cotsregistrysecret --docker-username={{registry_usrnme}} --docker-server={{Registry_URL}} --docker-password={{registry_pass}}"
+  command: "kubectl create secret docker-registry --docker-username={{registry_usrnme}} --docker-server={{Registry_URL}} --docker-password={{registry_pass}}"
 
 - name: "Deploying node.js project"
   shell: cat deploy-nodejs.yml | envsubst | kubectl create -f -
