@@ -1,0 +1,3 @@
+- name: "Deploying node.js project"
+  shell: cat deploy-nodejs.yml | envsubst | kubectl create -f -
+

@@ -1,0 +1,19 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: nodejs-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: v1
+    kind: Deployment
+    name: nodejs
+  minReplicas: 7
+  maxReplicas: 10
+  metrics:
+    - type: Resource
+      resource:
+        - name: memory
+          targetAverageUtilization: 60
+        - name: cpu
+          targetAverageUtilization: 50
+

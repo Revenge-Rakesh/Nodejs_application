@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: deployment
+metadata:
+  name: nodejs
+  labels:
+    app: nodejs
+spec:
+  replicas: 7
+  selector:
+    matchLabels:
+      app: nodejs
+  template:
+    metadata:
+      label:
+        app: nodejs
+    spec:
+      container:
+        - name: nodejs-test
+          image: 102315585312.dkr.ecr.us-east-2.amazonaws.com/nodejs-test
+          ports:
+            - containerPort: 3000
+              protocol: TCP
+              initialDelaySeconds: 10
+              timeoutSeconds: 10
+              periodSeconds: 10
+              successThreshold: 1
+              failureThreshold: 5
+          resources:
+              requests:
+                cpu: 1
+                memory: "2Gi"
+              limits:
+                cpu: 1
+                memory: "2Gi"
+
